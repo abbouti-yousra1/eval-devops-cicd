@@ -16,5 +16,5 @@ jobs:
       - name: Vérification du fichier index.html
         run: |
           echo "Début des tests"
-          test -f index_fake.html
+          test -f index.html
           echo "Le fichier index.html est présent"
