@@ -1,0 +1,19 @@
+name: Déploiement sur serveur Debian
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, linux, debian]
+
+    steps:
+      - name: Récupération du code
+        uses: actions/checkout@v4
+
+      - name: Déploiement du site sur Nginx
+        run: |
+          rm -rf /var/www/eval-devops/*
+          cp -r ./* /var/www/eval-devops/
